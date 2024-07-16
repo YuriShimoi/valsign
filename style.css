@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'Norse';
+    src: url(Norsebold.otf);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+
+    height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+textarea, input {
+    outline: none;
+    color: #555;
+}
+
+#main {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+    gap: 10px;
+    background-image: url(background.png);
+    background-size: cover;
+    overflow: hidden;
+}
+#main > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#preview {
+    width: 100%;
+    background-image: url(sign.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#preview img {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#preview-text {
+    --voffset: 0;
+    --size-default: 8;
+    --size: calc(var(--size-default) - var(--voffset));
+
+    text-align: center;
+    transform: translateY(calc(146px + calc(-16px * var(--voffset))));
+    font-size: calc(var(--size) * 16px);
+    line-height: calc(var(--size) * 16px);
+    font-family: Norse;
+    width: 100%;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    max-width: 380px;
+}
+
+#form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 300px;
+    margin-right: 50px;
+    z-index: 1;
+}
+
+#form .input-container {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+}
+#form .input-min {
+    width: calc(50% - 22px);
+}
+
+#form .input-container label {
+    font-size: 15px;
+    color: #ccc;
+}
+
+#form .input-container > .side-input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 2px;
+    background: #ccc;
+    overflow: hidden;
+}
+#form .input-container .sub-input {
+    width: 80px;
+    border: none;
+}
+#form .input-container .sub-input.sub-large {
+    width: 220px;
+}
+
+#form .input-container #input-color-picker {
+    background: #000000;
+}
+
+#form .input-container > .side-input > button {
+    width: 100%;
+    height: 20px;
+    border: none;
+    color: #aaa;
+    background: #d2d2d2;
+    font-size: 10px;
+    transform: translateY(-3px) scaleX(2);
+    cursor: pointer;
+}
+#form .input-container > .side-input > button + button {
+    background: #e3e3e3;
+}
+#form .input-container > .side-input > button:hover {
+    color: #555;
+}
+
+#text-input {
+    resize: none;
+    height: 100px !important;
+    overflow-y: scroll;
+}
+#text-input::-webkit-scrollbar {
+    opacity: 0;
+}
+#text-input-label {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: small;
+    color: gray;
+    transform: translate(-4px, -26px);
+}
+#text-input-label::after {
+    content: "/50";
+}
+
+#input-text {
+    width: 100%;
+    border: none;
+}
+
+input.sub-input::-webkit-outer-spin-button,
+input.sub-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input.sub-input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=color]::-webkit-color-swatch {
+    opacity: 0;
+}
+
+#copyy {
+    display: block;
+    width: 100%;
+    height: 0;
+    transform: translateY(-30px);
+    color: #444;
+    font-family: monospace;
+    text-align: center;
+}

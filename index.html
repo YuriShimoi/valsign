@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ValSign</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="main">
+            <div></div>
+            <div>
+                <div id="preview" text="PLACEHOLDER" style="margin-top: 80px;">
+                    <span id="preview-text">SAMPLE</span>
+                    <img src="sign.png">
+                </div>
+            </div>
+            <div>
+                <div id="form">
+                    <div class="input-container">
+                        <div>
+                            <label for="input-text">text</label>
+                            <input id="input-text" type="text" value="Sample" placeholder="Sign Text">
+                        </div>
+                    </div>
+
+                    <div class="input-container input-min">
+                        <div>
+                            <label for="input-color">color</label>
+                            <input id="input-color" type="text" class="sub-input" value="#000000" placeholder="#000000">
+                        </div>
+                        <input id="input-color-picker" class="side-input" type="color" value="#000000">
+                    </div>
+                    <div class="input-container input-min">
+                        <div>
+                            <label for="input-size">size</label>
+                            <input id="input-size" type="number" class="sub-input" value="0" placeholder="-" step="0.5" min="0">
+                        </div>
+                        <div class="side-input">
+                            <button onclick="updateInput(this, 0.5)">▲</button>
+                            <button onclick="updateInput(this, -0.5)">▼</button>
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <div>
+                            <label for="input-voffset">voffset</label>
+                            <input id="input-voffset" type="number" class="sub-input sub-large" value="0" placeholder="-" step="1">
+                        </div>
+                        <div class="side-input">
+                            <button onclick="updateInput(this, 1)">▲</button>
+                            <button onclick="updateInput(this, -1)">▼</button>
+                        </div>
+                    </div>
+
+                    <textarea class="input-container" id="text-input" placeholder="code" readonly>Sample</textarea>
+                    <label for="text-input" id="text-input-label">6</label>
+                    <span id="copyy">With ❤ by Yurius and Nino</span>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
